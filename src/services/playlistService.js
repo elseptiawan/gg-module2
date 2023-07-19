@@ -2,7 +2,8 @@ const {
     addSong,
     getAllSongs,
     getSong,
-    play
+    play,
+    getMostPlayed
   } = require('../models/playlistModel');
 
 function getPlaylists(){
@@ -21,4 +22,8 @@ function playSong(id){
     return play(id);
 }
 
-module.exports = {getPlaylists, getPlaylist, addPlaylist, playSong}
+function mostPlayed(){
+    return getMostPlayed();
+}
+
+module.exports = {getPlaylists, getPlaylist, addPlaylist, playSong, mostPlayed}

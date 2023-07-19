@@ -2,7 +2,8 @@ const {
     getPlaylists,
     getPlaylist,
     addPlaylist,
-    playSong
+    playSong,
+    mostPlayed
   } = require('../services/playlistService');
 const Validator = require('fastest-validator');
 
@@ -43,4 +44,9 @@ const play = (req, res) => {
     res.json({success:true, message:`Play Song with id ${id}`, data:song});
 }
 
-module.exports = {index, show, store, play}
+const getSongsSortByMostPlayed = (req, res) => {
+    const songs = mostPlayed();
+    res.json({success:true, message:"Success Get Songs Sort By Most Played", data:songs});
+}
+
+module.exports = {index, show, store, play, getSongsSortByMostPlayed}

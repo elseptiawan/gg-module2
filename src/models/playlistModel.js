@@ -21,4 +21,8 @@ function play(id){
     return song;
 }
 
-module.exports = {addSong, getAllSongs, getSong, play};
+function getMostPlayed(){
+    return songs.sort((a, b) => (a.playCount > b.playCount ? -1 : 1));
+}
+
+module.exports = {addSong, getAllSongs, getSong, play, getMostPlayed};
